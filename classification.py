@@ -50,11 +50,9 @@ print("\tSVM : {0}".format(np.mean(predicted_SGDC == data_test.target)))
 parameters = {'vect__ngram_range':[(1,1),(1,2)],
             'tfidf__use_idf':(True, False),
             'clf__alpha':(1e-2, 1e-3),}
-gs_clf = GridSearchCV(text_clf_SGDC, parameters, n_jobs=-1)#ici on lui donne beaucoup de ressources.
+gs_clf = GridSearchCV(text_clf_SGDC, parameters, n_jobs=-1)
 gs_clf = gs_clf.fit(data_train.data[:400], data_train.target[:400])
-#print(twenty_train.target_names[gs_clf.predict(['God is love'])[0]])
 
-#print(gs_clf.best_score_)
 
 for param_name in sorted(parameters.keys()):
     print("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
