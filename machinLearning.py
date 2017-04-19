@@ -23,12 +23,16 @@ test_neg_ratio = 1 - test_pos_ratio
 def process(source_folder, target_folder, files):
     for processed_file in files:
         with open("{0}/{1}".format(source_folder, processed_file), 'r') as input_f:
+        #Decomment the following line for Windows
+        #with open("{0}/{1}".format(source_folder, processed_file), 'r', encoding='latin-1') as input_f:
             strW = ""
             for line in input_f:
                 if any(word in line for word in tags):
                     tagsWord = line.split("\t")[2]
                     strW += tagsWord.split("|")[0] if "|" in tagsWord else tagsWord
         with open("{0}/processed_{1}".format(target_folder, processed_file), 'w') as output_f:
+        #Decomment the following line for Windows
+        #with open("{0}/processed_{1}".format(target_folder, processed_file), 'w') as output_f:
             output_f.write(strW)
 
 if __name__ == "__main__":

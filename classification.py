@@ -46,7 +46,7 @@ print("\nPrediction :")
 print("\tNaive Bays : {0}".format(np.mean(predicted_NB == data_test.target)))
 print("\tSVM : {0}".format(np.mean(predicted_SGDC == data_test.target)))
 
-'''Optimization'''
+'''Optimization WARNING ! Not working on Windows'''
 parameters = {'vect__ngram_range':[(1,1),(1,2)],
             'tfidf__use_idf':(True, False),
             'clf__alpha':(1e-2, 1e-3),}
