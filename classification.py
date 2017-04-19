@@ -65,7 +65,7 @@ if DETAIL:
     print("\nData loading :")
     print(data_train.target_names)
     print(len(data_train.data))
-    print(len(data_train.filename))
+    print(len(data_train.filenames))
     print("\n".join(data_train.data[0].split("\n")[:3]))
 
     print("\n--------------------")
@@ -80,11 +80,11 @@ if DETAIL:
     print("\n--------------------")
     print("\nMetrics : ")
     print("\nClassification for Naive Bayes")
-    print(metrics.classification_report(data_test.target, predicted_NB, target_names=data_test.target))
+    print(metrics.classification_report(data_test.target, predicted_NB, target_names=data_test.target_names))
     print("\nMatrix for Naive Bayes")
     print(metrics.confusion_matrix(data_test.target, predicted_NB))
 
     print("\nClassification for SVM")
-    print(metrics.classification_report(data_test.target, predicted_SGDC, target_names=data_test.target))
+    print(metrics.classification_report(data_test.target, predicted_SGDC, target_names=data_test.target_names))
     print("\nMatrix for SVM")
     print(metrics.confusion_matrix(data_test.target, predicted_SGDC))
