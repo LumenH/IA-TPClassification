@@ -1,6 +1,6 @@
-TP de classification - Debrot Aurélie
+﻿TP de classification - Debrot Aurélie
 
-Il faut créer les dossiers suivants :
+Il faut créer les dossiers suivants, s'ils ne sont pas déjà créés :
   train/pos
   train/neg
   test/pos
