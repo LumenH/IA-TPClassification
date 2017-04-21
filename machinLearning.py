@@ -20,6 +20,7 @@ test_ratio = 1 - train_ratio
 test_pos_ratio = 0.5
 test_neg_ratio = 1 - test_pos_ratio
 
+'''Read the files in the sources folders and place them in the differents target folders'''
 def process(source_folder, target_folder, files):
     for processed_file in files:
         with open("{0}/{1}".format(source_folder, processed_file), 'r') as input_f:
